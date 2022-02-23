@@ -1,0 +1,20 @@
+<div class="user-menu"> {{! TODO: handle data-click-outside}}
+  <div data-max-width="320" class="menu-panel">
+    <div class="panel-body">
+      <div class="panel-body-contents">
+        <div class="menu-links-header">
+          <div class="menu-links-row">
+            <div aria-label="Menu links" role="tablist" class="glyphs">
+              {{#each this.coreMenuButtons as |button|}}
+                <Glimmer::DButton disabled=''/>
+              {{/each}}
+              {{! for each button here}}
+            </div>
+          </div>
+        </div>
+        <Glimmer::QuickAccessPanel tabindex="-1"/>
+        {{!<div id="quick-access-notifications" tabindex="-1" class="quick-access-panel"> </div>}}
+      </div>
+    </div>
+  </div>
+</div>
