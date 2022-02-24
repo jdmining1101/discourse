@@ -8,32 +8,38 @@ export default class UserMenu extends GlimmerComponent {
   activeTab = DefaultTab;
 
   get coreMenuButtons() {
-    return [
+    const tabs = [
       {
         id: DefaultTab,
         icon: "bell",
-        classes: ["user-notifications-link"],
+        classNames: ["user-notifications-link"],
         title: "Notifications",
       },
       {
         id: "bookmarks",
         icon: "bookmark",
-        classes: ["user-bookmarks-link"],
+        classNames: ["user-bookmarks-link"],
         title: "Bookmarks",
       },
       {
         id: "messages",
         icon: "envelope",
-        classes: ["user-pms-link"],
+        classNames: ["user-pms-link"],
         title: "Messages",
       },
       {
         id: "profile",
         icon: "user",
-        classes: ["user-preferences-link"],
+        classNames: ["user-preferences-link"],
         title: "Preferences",
       },
     ];
+    tabs.forEach((tab) => {
+      tab.classNames.push("menu-link");
+      tab.className = tab.classNames.join(" ");
+      delete tab.classNames;
+    });
+    return tabs;
   }
 
   @action
