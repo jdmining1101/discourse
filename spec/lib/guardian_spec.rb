@@ -2,8 +2,6 @@
 
 require 'rails_helper'
 
-require 'guardian'
-
 describe Guardian do
 
   fab!(:user) { Fabricate(:user) }
