@@ -3,6 +3,7 @@
   title={{computedTitle}}
   aria-label={{computedAriaLabel}}
   disabled={{disabled}}
+  {{on "click" this.onClick}}
   ...attributes>
   {{#if @isLoading}}
     {{~d-icon "spinner" class="loading-icon"~}}
